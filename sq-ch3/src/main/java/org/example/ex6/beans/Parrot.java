@@ -1,4 +1,4 @@
-package org.example.ex5.beans;
+package org.example.ex6.beans;
 
 import org.springframework.stereotype.Component;
 

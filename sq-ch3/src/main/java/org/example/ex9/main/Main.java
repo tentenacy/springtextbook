@@ -1,7 +1,7 @@
-package org.example.ex8.main;
+package org.example.ex9.main;
 
-import org.example.ex8.beans.Person;
-import org.example.ex8.config.ProjectConfig;
+import org.example.ex9.beans.Person;
+import org.example.ex9.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {

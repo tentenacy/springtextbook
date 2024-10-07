@@ -1,13 +1,14 @@
-package org.example.ex8.config;
+package org.example.ex9.config;
 
-import org.example.ex8.beans.Parrot;
-import org.example.ex8.beans.Person;
+import org.example.ex9.beans.Parrot;
+import org.example.ex9.beans.Person;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = "org.example.ex9.beans")
 public class ProjectConfig {
 
     @Bean
@@ -21,14 +22,6 @@ public class ProjectConfig {
     public Parrot parrot2() {
         Parrot p = new Parrot();
         p.setName("Miki");
-        return p;
-    }
-
-    @Bean
-    public Person person(@Qualifier("parrot2") Parrot parrot2) {
-        Person p = new Person();
-        p.setName("Ella");
-        p.setParrot(parrot2);
         return p;
     }
 }

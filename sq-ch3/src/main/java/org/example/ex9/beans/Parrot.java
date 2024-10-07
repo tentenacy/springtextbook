@@ -1,7 +1,4 @@
-package org.example.ex8.beans;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+package org.example.ex9.beans;
 
 public class Parrot {
 

@@ -1,14 +1,23 @@
 package org.example.ex1.main;
 
-import org.example.ex1.beans.Person;
-import org.example.ex1.config.ProjectConfig;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.example.ex1.model.Comment;
+import org.example.ex1.proxies.CommentNotificationProxy;
+import org.example.ex1.proxies.EmailCommentNotificationProxy;
+import org.example.ex1.repositories.CommentRepository;
+import org.example.ex1.repositories.DBCommentRepository;
+import org.example.ex1.services.CommentService;
 
 public class Main {
     public static void main(String[] args) {
-        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Person p = context.getBean(Person.class);
-        System.out.println("Person's name: " + p.getName());
-        System.out.println("Person's parrot: " + p.getParrot());
+        CommentRepository commentRepository = new DBCommentRepository();
+        CommentNotificationProxy commentNotificationProxy = new EmailCommentNotificationProxy();
+
+        CommentService commentService = new CommentService(commentRepository, commentNotificationProxy);
+
+        Comment comment = new Comment();
+        comment.setAuthor("Laurentiu");
+        comment.setText("Demo comment");
+
+        commentService.publishComment(comment);
     }
 }

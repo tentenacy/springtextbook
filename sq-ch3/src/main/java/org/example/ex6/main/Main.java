@@ -1,7 +1,7 @@
-package org.example.ex5.main;
+package org.example.ex6.main;
 
-import org.example.ex5.beans.Person;
-import org.example.ex5.config.ProjectConfig;
+import org.example.ex6.beans.Person;
+import org.example.ex6.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
